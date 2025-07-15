@@ -115,7 +115,7 @@ INNER JOIN Authors a
 ON b.author_id = a.id
 ORDER BY b.id;
 ```
--F. Write a Query to Retrieve name of Books with corresponding Translators:
+- F. Write a Query to Retrieve name of Books with corresponding Translators:
 ```sql
 SELECT b.id, b.title, b.type, t.first_name, t.last_name
 FROM Books b
@@ -123,7 +123,7 @@ INNER JOIN Translators t
 ON b.translator_id = t.id
 ORDER BY b.id;
 ```
--G. Retrieve id, type, title from Books table matching records with Translators and Authors Table
+- G. Retrieve id, type, title from Books table matching records with Translators and Authors Table
 The AS is used as an Alias to refer to a given column from the Table
 We use the ORDER BY Statement for precise ordering of results
 ```sql
@@ -134,7 +134,7 @@ LEFT JOIN Translators t
 ON b.translator_id = t.id
 ORDER BY b.id;
 ```
--H. Write Query to Retrieve all records from Editors Table
+- H. Write Query to Retrieve all records from Editors Table
 ```sql
 SELECT b.id, b.title, e.last_name AS Author
 FROM Books b
