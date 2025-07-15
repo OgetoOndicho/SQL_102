@@ -11,7 +11,7 @@ A recently launched Book Publishing Company called Studio hires a Data Analyst t
 - Create four tables for the company's main attributes and update records into the tables within the databases.
 - Create accurate joins within the tables so as to produce consistence records for easier analysis
 
-## SAMPLE SQL QUERIES TO ANSWER QUESTIONS
+## 1.3 SAMPLE SQL QUERIES TO ANSWER QUESTIONS
 - A. Create database for the Company 'Studio' and the authorise its use:
 ```sql
 CREATE DATABASE Publishing_Studio;
@@ -51,7 +51,7 @@ last_name VARCHAR(20)
 
 - C. Update data into the respective tables
 
-Books;
+---Books Table---
 
 ```sql
 INSERT INTO Books VALUES 
@@ -65,7 +65,7 @@ INSERT INTO Books VALUES
 (8, 'my last book', 'original', '12', '28', NULL);
 ```
 
-Authors;
+---Authors Table---
 
 ```sql
 INSERT INTO Authors VALUES
@@ -76,7 +76,7 @@ INSERT INTO Authors VALUES
 ('15', 'Yoo', 'Mama');
 ```
 
-Editors;
+---Editors Table---
 
 ```sql
 INSERT INTO Editors VALUES
@@ -89,7 +89,7 @@ INSERT INTO Editors VALUES
 ('27', 'Matthew', 'Stains');
 ```
 
-Translators;
+---Translators Table---
 
 ```sql
 INSERT INTO Translators VALUES
@@ -255,6 +255,7 @@ There are different types of sub-queries such as:
 - Table Subquery
 - Column Subquery
 - Correlated Subquery
+
 All these are useful in performing complex SQL Operations.
 
 
