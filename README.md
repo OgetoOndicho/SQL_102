@@ -1,4 +1,4 @@
-# SQL_102 (PART_1)
+# SQL 102 (PART_1)
 This is an SQL learning Project, aimed at bettering my SQL Skills using JOINS and SUB-QUERIES for Data Analytics. This project is divide into 2 Parts. 
 Part 1 includes use of JOINS in SQL. Starts first by designing of some Databases, Creating and Updating Tables, Inserting Data into the Tables within the databases, then writing SQL Queries to perform Joins so as analyze and gain insights about the data.
 Part 2 includes also designing of database from scratch, creating tables, updating the tables then writing SQL Subqueries for efficient data analysis.
