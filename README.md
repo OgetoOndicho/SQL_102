@@ -1,4 +1,4 @@
-# SQL_102
+# SQL_102 (PART_1)
 This is an SQL learning Project, aimed at bettering my SQL Skills using JOINS and SUB-QUERIES for Data Analytics. This project is divide into 2 Parts. 
 Part 1 includes use of JOINS in SQL. Starts first by designing of some Databases, Creating and Updating Tables, Inserting Data into the Tables within the databases, then writing SQL Queries to perform Joins so as analyze and gain insights about the data.
 Part 2 includes also designing of database from scratch, creating tables, updating the tables then writing SQL Subqueries for efficient data analysis.
@@ -157,6 +157,106 @@ There are 4 types of SQL JOIN QUERIES used for data analysis.
 - The "LEFT JOIN" Pulls all records from the Left Table matching the right table.
 - The "RIGHT JOIN" Pulls all reccords from the Right Table matching the Left table.
 - The "INNER JOIN" Pulls ONLY matching records from the TWO Tables.
+
+# SQL 102 (PART_2)
+The CEO of the Publishing Studio Company, also happens to be the Director of Global Company X that deal with fresh fruit exports. He hires the same data analyst to design a database for his company, analyze data so as to derive some meaningful insights. In this part, we will be exploring use of Sub-Queries in SQL as means of manipulating data.
+
+## PROJECT DELIVERABLES (PART_2)
+- Design a database for the Global Company X.
+- Design tables for the company's main attributes and update records into the tables within the databases.
+- Draw key insights using SQL Sub-Queries to make meaningful insights and analysis
+
+## SAMPLE SQL QUERIES TO ANSWER QUESTIONS
+- 1.1. Design database, two tables (employees and departments)for the Global Company X and the authorise its use:
+```sql
+CREATE DATABASE Global_Company_X;
+USE Global_Company_X;
+```
+- 1.2. Design tables (employees and departments) and insert data
+---Employees Table---
+```sql
+CREATE TABLE employee(
+employee_id INT PRIMARY KEY,
+first_name VARCHAR(30),
+last_name VARCHAR(30),
+email VARCHAR(30),
+phone_number INT,
+hire_date DATE,
+Salary DECIMAL(6,2),
+Commission_pct DECIMAL(4,2),
+Department_id INT,
+Manager_id INT,
+job_id VARCHAR(30)
+);
+
+INSERT INTO employee VALUES
+(10, 'Brion', 'Cajio', 'br100@gmail.com', '074567891', '2020-11-22', '100.44', '30.89', '100', '200','A1010'),
+(11, 'Jane', 'Tanu', 'janetanu@outlook.com', '0890675432', '2023-11-11', '300.01', '44.44', '101', '201', 'B4040'),
+(12, 'Carla', 'Vanui', 'carla101@gmail.com', '067709345', '1990-11-28', '239.45', '21.23', '102', '202', 'C1010'),
+(13, 'Big', 'Gotti', 'gotti@gmail.com', '078788900', '1997-06-22', '300.66', '33.33', '104', '203', 'D1234'),
+(14, 'Jane', 'Carlos', 'janecarlo12@gmail.com', '0789341111', '1997-10-10', '400.44', '56.45', '105', '204', 'D7098'),
+(17, 'Jeanne', 'Nganga', 'jeanne56@outlook.com', '01005432897', '1999-12-29', '500.99', '37.89', '106', '205', 'B1230');
+```
+---Departments Table---
+```sql
+CREATE TABLE departments (
+department_id INT PRIMARY KEY,
+department_name VARCHAR(30),
+manager_id INT,
+location_id VARCHAR(30)
+);
+
+INSERT INTO departments VALUES
+(100, 'Security', '404040', 'F404040'),
+(101, 'Guests', '303030', 'D303030'),
+(120, 'Staff', '5050505', 'G505050'),
+(104, 'Marketing', '606060', 'L606060'),
+(108, 'Digitization', '909090', 'M909090'),
+(106, 'Sales', '707870', '707870');
+```
+
+##SQL Sub-Query Questions
+- A. Scalar Sub-Query: Retrieve Employee first name with salary > than the Average salary from the table
+  
+```sql
+SELECT first_name
+FROM employee
+WHERE salary >(SELECT AVG(Salary) FROM employee);
+```
+
+- B.TABLESUB-QUERY = Values as a set of Tables
+
+```sql
+SELECT first_name, last_name
+FROM employee
+WHERE department_id IN (SELECT department_id FROM departments);
+```
+
+- C. COLUMN SUB-QUERY = Single Column of Values
+
+```sql
+SELECT last_name
+FROM employee
+WHERE department_id IN (SELECT department_id FROM departments WHERE location_id = 'F404040');
+```
+
+- D. CORRELATED SUB-QUERY = Depends on the outer query
+
+```sql
+SELECT first_name
+FROM employee 
+WHERE Salary IN (SELECT AVG(Salary) FROM employee WHERE department_id = '100');
+```
+
+## CONCLUSION
+In conclusion, SQL Sub-Query is a query nested within another query to perform operations that depend on results of another queries. 
+There are different types of sub-queries such as:
+- Scalar Subquery
+- Table Subquery
+- Column Subquery
+- Correlated Subquery
+All these are useful in performing complex SQL Operations.
+
 
 
 
